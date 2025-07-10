@@ -11,16 +11,36 @@
   </body>
 
   <script>
+    //explanation : js has no associative array like PHP or JAVA
+    //but we can define Associative array as empty object like line 16
     let my_arr = {};
     my_arr["name"] = "julia";
     my_arr["age"] = 40;
     my_arr["gender"] = "female";
     console.log(my_arr);
+    console.log(my_arr.age); //it is working
+    console.log(my_arr["gender"]); //also its works too!
+
+    //because now it is object we can use Object.entries
     const output = Object.entries(my_arr)
+        //key is name , age , gender in our case , defined in line 17 to 19
+        // value is julia , 40 , female
       .map(([key, value]) => {
-        return `<li>${key}: ${value}</li>`;
-      })
-      .join("");
+        return `<li>${key}: ${value}</li>`;//after map finish its work for each item in array , 
+        //update one time whole date to output
+      }).join("");
+      /*
+      why join at the end? 
+      because JavaScript automatically calls .toString() on arrays, which joins elements using commas by default.
+      without join we will have :
+      <li>name: julia</li>,<li>age: 40</li>,<li>gender: female</li>
+      look at commas between </li>,<li> we do not want them 
+        join("") means join then , ok but without commas ","
+        then we will have 
+        <li>name: julia</li><li>age: 40</li><li>gender: female</li>
+        you can remove join("") to see what happen!
+        also you can test .join("<br>"); or .join("<hr>")
+      */
     document.getElementById("showtime").innerHTML= output;
   </script>
 </html>
