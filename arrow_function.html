@@ -11,10 +11,23 @@
 
 
     <script>
+        class User {
+            name = "";
+            geld = 0;
+            address ="";
+            children = [];
+        }
+
+
         // JS Object
+         const julia = new User();
+            julia.name = "Julia";
+            julia.children = ["max", "Lili"];
+            julia.geld = 560000000000.37
+            julia.address = "West minister 11 , London"
         let user ={
             name: "Julia",
-            geld : 56000000000000000000000000000.36,
+            geld : 560000000000.36,
             address: "Berliner Str 1 , Düsseldorf",
             children: ["max","lili"]
         }
@@ -25,7 +38,7 @@
         }
 
         function log_user(){
-            console.log(user);
+            console.log(julia);
         }
         //der selbe aber arrow function
         const greet_arrow = () =>{
