@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    hi
+    <ul id="showtime"></ul>
+  </body>
+
+  <script>
+    let my_arr = {};
+    my_arr["name"] = "julia";
+    my_arr["age"] = 40;
+    my_arr["gender"] = "female";
+    console.log(my_arr);
+    const output = Object.entries(my_arr)
+      .map(([key, value]) => {
+        return `<li>${key}: ${value}</li>`;
+      })
+      .join("");
+    document.getElementById("showtime").innerHTML= output;
+  </script>
+</html>

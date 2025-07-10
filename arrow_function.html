@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>wir lernen in diese Site was ist Arrow functions und wie die funktioniern</h1>
-
+    <div id="showtime"></div>
 
     <script>
         class User {
@@ -20,6 +20,20 @@
             call_name() {
                 console.log("it is inner function: "+ this.name  );
             }
+            showtime(){
+                //ergibness von Object.entreis(this oder jeder anderes objekte is ein array (Associative array))
+                // in unsere fall   => [name=>bla bla, geld => 700 ,  ....]
+                // print ergibness["name"]  ===== bla bla
+                const myObjectProperties = Object.entries(this);
+                const output = Object.entries(this).map(([key,value])=>{
+                    if(Array.isArray(value)){
+                        value.join(", ");
+                    }
+                    return `${key}: ${value}`;
+                }).join("<br>");
+                document.getElementById("showtime").innerHTML = output;
+            }
+        
         }
 
 
@@ -30,10 +44,10 @@
             julia.geld = 560000000000.37
             julia.address = "West minister 11 , London";
 
-        julia.call_name();
+        julia.showtime();
 
 
-        
+
         let user ={
             name: "Julia",
             geld : 560000000000.36,
