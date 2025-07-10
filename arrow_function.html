@@ -11,9 +11,21 @@
 
 
     <script>
+        // JS Object
+        let user ={
+            name: "Julia",
+            geld : 56000000000000000000000000000.36,
+            address: "Berliner Str 1 , Düsseldorf",
+            children: ["max","lili"]
+        }
+
         //normale function
         function greet(){
             alert("hello world!")
+        }
+
+        function log_user(){
+            console.log(user);
         }
         //der selbe aber arrow function
         const greet_arrow = () =>{
@@ -40,7 +52,7 @@
 
     <script>
         //run functions!
-        hello_name_one_arg_arrow("jo");
+        log_user();
     </script>
 </body>
 </html>
