@@ -15,15 +15,32 @@
         function greet(){
             alert("hello world!")
         }
-
         //der selbe aber arrow function
         const greet_arrow = () =>{
             alert("hello world from arrow!")
         }
+
+        //----------- mit Argument ----------
+        function hello_name(given_name){
+            let result = "hello dear "+given_name
+            console.log(result);
+        }
+
+        const hello_name_arrow = (given_name)=>{
+            let result = "hello dear "+given_name
+            console.log(result)
+        }
+
+        //wenn nur ein argument soll sein , kann so geschrieben werden
+        const hello_name_one_arg_arrow = given_name =>console.log("hello dear" + given_name);
+
+
+
     </script>
 
     <script>
-        greet_arrow();
+        //run functions!
+        hello_name_one_arg_arrow("jo");
     </script>
 </body>
 </html>
