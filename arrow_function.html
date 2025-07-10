@@ -16,6 +16,10 @@
             geld = 0;
             address ="";
             children = [];
+
+            call_name() {
+                console.log("it is inner function: "+ this.name  );
+            }
         }
 
 
@@ -24,7 +28,12 @@
             julia.name = "Julia";
             julia.children = ["max", "Lili"];
             julia.geld = 560000000000.37
-            julia.address = "West minister 11 , London"
+            julia.address = "West minister 11 , London";
+
+        julia.call_name();
+
+
+        
         let user ={
             name: "Julia",
             geld : 560000000000.36,
