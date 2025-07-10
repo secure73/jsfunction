@@ -8,6 +8,8 @@
   <body>
     hi
     <ul id="showtime"></ul>
+
+    <ul id="showtime_foreach"></ul>
   </body>
 
   <script>
@@ -42,5 +44,15 @@
         also you can test .join("<br>"); or .join("<hr>")
       */
     document.getElementById("showtime").innerHTML= output;
+  </script>
+
+  <script>
+    const ul = document.getElementById("showtime_foreach");
+    // Use Object.entries + forEach to create and add <li> items
+    Object.entries(my_arr).forEach(([key, value]) => {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${value}`;
+      ul.appendChild(li);
+    });
   </script>
 </html>
