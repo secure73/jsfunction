@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    hi
-    <ul id="showtime"></ul>
-
-    <ul id="showtime_foreach"></ul>
-  </body>
 
   <script>
+    // we define our array heir once and use it in following tow script sections
     //explanation : js has no associative array like PHP or JAVA
-    //but we can define Associative array as empty object like line 16
+    //but we can define Associative array as empty object like line 13
     let my_arr = {};
     my_arr["name"] = "julia";
     my_arr["age"] = 40;
@@ -22,10 +17,21 @@
     console.log(my_arr);
     console.log(my_arr.age); //it is working
     console.log(my_arr["gender"]); //also its works too!
+  </script>
+  
+  
+  <body>
+    hi
+    <ul id="showtime"></ul>
 
+    <ul id="showtime_foreach"></ul>
+  </body>
+
+
+  <script>
     //because now it is object we can use Object.entries
     const output = Object.entries(my_arr)
-        //key is name , age , gender in our case , defined in line 17 to 19
+        //key is name , age , gender in our case , defined in lines 14 to 16
         // value is julia , 40 , female
       .map(([key, value]) => {
         return `<li>${key}: ${value}</li>`;//after map finish its work for each item in array , 
